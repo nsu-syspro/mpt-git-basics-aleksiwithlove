@@ -31,7 +31,7 @@ fi
 
 echo "# Check for merges of sorting-rebased into main"
 
-FIRST_MERGE_COMMIT=$(git log --color=always --format='%H' --ancestry-path main ^origin/sorting-rebased | tail -n 1)
+FIRST_MERGE_COMMIT=$(git log --color=always --format='%H' --ancestry-path origin/main ^origin/sorting-rebased | tail -n 1)
 MAIN_LOG=$(git log --color=always -p --first-parent -n 1 "$FIRST_MERGE_COMMIT")
 if [[ $MAIN_LOG ]]; then
   echo "$MAIN_LOG"
